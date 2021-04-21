@@ -1,0 +1,29 @@
+Step 1: You need to install Clingo on Ubuntu. To install Clingo, just run this command: sudo apt-get install gringo
+--------------------
+Step 2: You can set inital state and goal state in query.asp file. For example, the inital state is "r1", and the goal state is "r10".
+
+at(r1, 0). 
+:- not at(r10, n-1).
+--------------------
+Step 3: 
+To test the ASP files, run this command: clingo -c n=10 *.asp
+where n-1 is the maximum number of actions allowed in task planning. 
+--------------------
+Step 4: 
+You will get the result:
+
+approach(d1,0)
+opendoor(d1,1)
+gothrough(d1,2) 
+approach(d11,3) 
+opendoor(d11,4)
+gothrough(d11,5)
+approach(d12,6)
+opendoor(d12,7)
+gothrough(d12,8) 
+
+where d1 refers to door 1. 
+
+
+
+
